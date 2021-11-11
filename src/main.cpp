@@ -25,7 +25,7 @@ void loop()
   Serial.println(A3Reading);
   switch (A3Reading)
   {
-  case 0 ... 370:
+  case 0 ... 365:
     if (!inGear)
     {
       switch (A2Reading)
@@ -51,7 +51,7 @@ void loop()
       }
     }
     break;
-  case 371 ... 464:
+  case 366 ... 464:
     neutral(&Joystick);
     inGear = false;
     break;
