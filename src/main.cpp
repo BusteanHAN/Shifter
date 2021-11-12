@@ -25,25 +25,25 @@ void loop()
   Serial.println(A3Reading);
   switch (A3Reading)
   {
-  case 0 ... 365:
+  case 0 ... 660:
     if (!inGear)
     {
       switch (A2Reading)
       {
-      case 775 ... 1023:
-        first(&Joystick);
+      case 0 ... 470:
+        second(&Joystick);
         inGear = true;
         break;
-      case 720 ... 774:
-        third(&Joystick);
+      case 490 ... 520:
+        fourth(&Joystick);
         inGear = true;
         break;
-      case 590 ... 665:
-        fifth(&Joystick);
+      case 660 ... 730:
+        sixth(&Joystick);
         inGear = true;
         break;
-      case 0 ... 580:
-        seventh(&Joystick);
+      case 770 ... 1023:
+        reverse(&Joystick);
         inGear = true;
         break;
       default:
@@ -51,29 +51,29 @@ void loop()
       }
     }
     break;
-  case 366 ... 464:
+  case 661 ... 779:
     neutral(&Joystick);
     inGear = false;
     break;
-  case 465 ... 1023:
+  case 780 ... 1023:
     if (!inGear)
     {
       switch (A2Reading)
       {
-      case 680 ... 1023:
-        second(&Joystick);
+      case 0 ... 460:
+        first(&Joystick);
         inGear = true;
         break;
-      case 570 ... 630:
-        fourth(&Joystick);
+      case 465 ... 500:
+        third(&Joystick);
         inGear = true;
         break;
-      case 537 ... 565:
-        sixth(&Joystick);
+      case 610 ... 670:
+        fifth(&Joystick);
         inGear = true;
         break;
-      case 0 ... 536:
-        reverse(&Joystick);
+      case 700 ... 1023:
+        seventh(&Joystick);
         inGear = true;
         break;
       }
